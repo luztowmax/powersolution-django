@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+
+{% block title %}Payment Status | HomePower{% endblock %}
+
+{% block content %}
+<section class="card" style="text-align:center; padding:45px;">
+
+    {% if success %}
+        <h1 style="color:#16845b;">
+            Payment Successful!
+        </h1>
+
+        <p>
+            Your full equipment payment has been verified.
+        </p>
+    {% else %}
+        <h1>Payment Not Confirmed</h1>
+
+        <p>
+            We could not confirm your payment yet.
+            If you were charged, please contact support
+            with your payment reference.
+        </p>
+    {% endif %}
+
+    <p>Reference: {{ reference }}</p>
+
+    <a href="{% url 'home' %}" class="btn primary">
+        Return to HomePower
+    </a>
+
+</section>
+{% endblock %}

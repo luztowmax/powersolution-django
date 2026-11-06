@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}PowerSolution{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="top">
+        <a class="logo" href="/">⚡ POWERSOLUTION</a>
+
+        <nav>
+            <a href="/">Calculator</a>
+            <a href="/admin/">Admin</a>
+        </nav>
+    </header>
+
+    <main class="wrap">
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="notice {{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>⚡Power Solution</h3>
+                <p>
+                    Smart home energy assessment, inverter sizing,
+                    battery configuration and solar power solutions.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
+                <a href="mailto:YOUR_EMAIL@example.com">Contact Us</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/YOUR_PAGE"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/YOUR_HANDLE"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/YOUR_COMPANY"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@YOUR_HANDLE"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; {% now "Y" %} PowerSolution.
+                All rights reserved.
+            </p>
+            <p>
+                Estimates require qualified technical verification.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Chat -->
+    <div class="whatsapp-widget">
+        <div id="whatsapp-chat" class="whatsapp-chat-box" hidden>
+            <div class="chat-header">
+                <i class="fab fa-whatsapp"></i>
+                <span>PowerSolution Support</span>
+                <button type="button" id="close-whatsapp"
+                        aria-label="Close chat">&times;</button>
+            </div>
+
+            <div class="chat-body">
+                <p>Hello! 👋</p>
+                <p>
+                    Need help choosing an inverter, battery or
+                    solar system for your home?
+                </p>
+                <a id="start-whatsapp"
+                   href="https://wa.me/2349032924589?text=Hello%20HomePower%2C%20I%20need%20assistance"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Start WhatsApp Chat
+                </a>
+            </div>
+        </div>
+
+        <button type="button" id="whatsapp-toggle"
+                class="whatsapp-float"
+                aria-label="Chat with HomePower on WhatsApp"
+                aria-expanded="false">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    {% block scripts %}
+    {% endblock %}
+
+    <script src="{% static 'js/whatsapp.js' %}"></script>
+
+</body>
+</html>
