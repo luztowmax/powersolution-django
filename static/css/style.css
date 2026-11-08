@@ -166,3 +166,384 @@
         right: 15px;
     }
 }
+
+/* PowerSolution About Page */
+
+.about-container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.about-hero {
+  padding: 90px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #073b31, #16845b);
+  color: #fff;
+}
+
+.about-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin: 15px auto;
+  max-width: 800px;
+}
+
+.about-hero p {
+  max-width: 740px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+  color: #e4f5ec;
+}
+
+.about-eyebrow {
+  color: #16a36c;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.about-hero .about-eyebrow {
+  color: #a9f5cc;
+}
+
+.about-button {
+  display: inline-block;
+  padding: 14px 26px;
+  background: #fff;
+  color: #07563e;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.about-button:hover {
+  transform: translateY(-2px);
+}
+
+.about-section {
+  padding: 75px 0;
+}
+
+.about-heading {
+  max-width: 800px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.about-heading h2,
+.about-two-columns h2 {
+  margin: 12px 0 20px;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+.about-heading p,
+.about-two-columns p {
+  line-height: 1.8;
+  color: #64748b;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.about-feature {
+  padding: 28px 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.about-feature h3 {
+  margin: 14px 0 10px;
+  color: #12382e;
+}
+
+.about-feature p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.about-icon {
+  font-size: 2rem;
+}
+
+.about-muted {
+  background: #f3f8f5;
+}
+
+.about-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-mission-card {
+  padding: 35px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.about-mission-card li {
+  margin: 14px 0;
+  line-height: 1.6;
+}
+
+.about-cta {
+  padding: 65px 0;
+  text-align: center;
+  background: #0b5d43;
+  color: #fff;
+}
+
+.about-cta p {
+  margin: 16px auto 25px;
+  max-width: 650px;
+}
+
+.about-disclaimer {
+  padding: 25px 0;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .about-grid,
+  .about-two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    padding: 60px 0;
+  }
+
+  .about-section {
+    padding: 50px 0;
+  }
+}
+
+/* HOW TO USE POWERSOLUTION */
+
+.guide-container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+.guide-hero {
+    background: linear-gradient(135deg, #073b31, #16845b);
+    color: white;
+    text-align: center;
+    padding: 85px 20px;
+}
+
+.guide-hero h1 {
+    color: #ffffff !important;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    margin: 15px 0;
+}
+
+.guide-hero p {
+    color: #e5fff1;
+    max-width: 720px;
+    margin: 0 auto 28px;
+    line-height: 1.8;
+}
+
+.guide-eyebrow {
+    color: #a7f3d0;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.guide-btn {
+    display: inline-block;
+    background: white;
+    color: #07563e;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.guide-btn:hover {
+    background: #dcfce7;
+    color: #07563e;
+}
+
+.guide-section {
+    padding: 75px 0;
+}
+
+.guide-light {
+    background: #f3f8f5;
+}
+
+.guide-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.guide-heading h2 {
+    color: #12382e;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.guide-heading p {
+    color: #64748b;
+}
+
+.guide-steps {
+    display: grid;
+    gap: 20px;
+}
+
+.guide-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    background: white;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.04);
+}
+
+.guide-number {
+    flex-shrink: 0;
+    background: #e0f7ea;
+    color: #08764f;
+    font-size: 23px;
+    font-weight: 800;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.guide-step h3 {
+    color: #12382e;
+    margin: 0 0 10px;
+}
+
+.guide-step p {
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.guide-example {
+    padding: 15px;
+    background: #effaf3;
+    border-left: 4px solid #16845b;
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+.guide-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.guide-result {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.guide-result h3 {
+    color: #12382e;
+    margin-bottom: 12px;
+}
+
+.guide-result p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+.guide-faq {
+    max-width: 850px;
+    margin: auto;
+}
+
+.guide-faq details {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+}
+
+.guide-faq summary {
+    cursor: pointer;
+    color: #12382e;
+    font-weight: 700;
+}
+
+.guide-faq details p {
+    color: #64748b;
+    line-height: 1.8;
+    margin-top: 12px;
+}
+
+.guide-cta {
+    background: #0b5d43;
+    text-align: center;
+    color: white;
+    padding: 65px 20px;
+}
+
+.guide-cta h2 {
+    color: white;
+}
+
+.guide-cta p {
+    margin: 16px auto 25px;
+    max-width: 650px;
+}
+
+.guide-notice {
+    background: #f8fafc;
+    padding: 25px 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+    .guide-results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .guide-results {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-step {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .guide-section {
+        padding: 50px 0;
+    }
+
+    .guide-hero {
+        padding: 60px 15px;
+    }
+}
+

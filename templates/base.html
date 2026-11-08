@@ -8,6 +8,7 @@
     <title>{% block title %}PowerSolution{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet"
@@ -20,8 +21,11 @@
         <a class="logo" href="/">⚡ POWERSOLUTION</a>
 
         <nav>
+            <a href="{% url 'about' %}">About Us</a>
+              <a href="{% url 'how_it_works' %}">How It Works</a>
             <a href="/">Calculator</a>
             <a href="/admin/">Admin</a>
+
         </nav>
     </header>
 

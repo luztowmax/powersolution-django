@@ -5,6 +5,8 @@ from energy import payments
 urlpatterns=[
  path('admin/',admin.site.urls),
  path('',views.home,name='home'),
+ path("about/", views.about, name="about"),
+ path("how-it-works/", views.how_it_works, name="how_it_works"),
  path('api/catalog/',views.catalog,name='catalog'),
  path('api/calculate/',views.calculate,name='calculate'),
  path('api/quote/',views.create_quote,name='create_quote'),

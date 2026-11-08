@@ -1,0 +1,144 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About PowerSolution | Smart Energy Planning{% endblock %}
+
+{% block content %}
+<section class="about-hero">
+  <div class="about-container">
+    <span class="about-eyebrow">ABOUT POWERSOLUTION</span>
+    <h1>Smarter Energy Planning Starts Here</h1>
+    <p>
+      PowerSolution helps homeowners, businesses and solar energy
+      professionals estimate their electricity needs and plan
+      reliable inverter, battery and solar power systems.
+    </p>
+    <a href="{% url 'home' %}" class="about-button">
+      Calculate Your Energy Needs
+    </a>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-heading">
+      <span class="about-eyebrow">WHAT WE DO</span>
+      <h2>Making Solar Power Planning Simple</h2>
+      <p>
+        Choosing the right inverter, battery and solar panel system
+        can be challenging. PowerSolution simplifies the process
+        through an easy-to-use energy calculator.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <article class="about-feature">
+        <div class="about-icon">⚡</div>
+        <h3>Energy Calculations</h3>
+        <p>
+          Estimate connected electrical loads and daily energy
+          consumption based on your appliances.
+        </p>
+      </article>
+
+      <article class="about-feature">
+        <div class="about-icon">🔋</div>
+        <h3>System Recommendations</h3>
+        <p>
+          Estimate suitable inverter capacity, battery requirements
+          and solar panel quantities.
+        </p>
+      </article>
+
+      <article class="about-feature">
+        <div class="about-icon">☀️</div>
+        <h3>Solar Power Planning</h3>
+        <p>
+          Explore solar system requirements based on daily energy
+          demand and available sunlight.
+        </p>
+      </article>
+
+      <article class="about-feature">
+        <div class="about-icon">📄</div>
+        <h3>Equipment Quotations</h3>
+        <p>
+          Review estimated equipment costs and generate
+          downloadable quotations for planning and budgeting.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about-section about-muted">
+  <div class="about-container about-two-columns">
+    <div>
+      <span class="about-eyebrow">OUR MISSION</span>
+      <h2>Helping People Make Better Energy Decisions</h2>
+      <p>
+        Our mission is to make energy system planning accessible,
+        understandable and convenient for households and businesses.
+      </p>
+      <p>
+        We believe informed energy decisions begin with knowing
+        how much electricity your appliances consume and which
+        equipment can support your needs.
+      </p>
+    </div>
+
+    <div class="about-mission-card">
+      <h3>Why Choose PowerSolution?</h3>
+      <ul>
+        <li>Simple appliance-based calculations</li>
+        <li>Inverter and battery sizing estimates</li>
+        <li>Solar panel recommendations</li>
+        <li>Transparent equipment cost estimates</li>
+        <li>Downloadable customer quotations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-container about-heading">
+    <span class="about-eyebrow">OUR COMPANY</span>
+    <h2>Developed by Luztow Resources Ltd</h2>
+    <p>
+      PowerSolution is a web-based energy planning application
+      developed by Luztow Resources Ltd, a Nigerian company
+      providing technology solutions and other business services.
+    </p>
+    <p>
+      The application combines practical energy planning
+      with digital technology to help users make informed
+      decisions before investing in power equipment.
+    </p>
+  </div>
+</section>
+
+<section class="about-cta">
+  <div class="about-container">
+    <h2>Ready to Plan Your Power System?</h2>
+    <p>
+      Start with your appliances and get an estimated
+      inverter, battery and solar system recommendation.
+    </p>
+    <a href="{% url 'home' %}" class="about-button">
+      Start Calculating
+    </a>
+  </div>
+</section>
+
+<section class="about-disclaimer">
+  <div class="about-container">
+    <p>
+      <strong>Important:</strong> PowerSolution provides estimated
+      system sizing and equipment pricing for planning purposes.
+      Final equipment selection and installation specifications
+      should be verified by a qualified solar energy professional.
+    </p>
+  </div>
+</section>
+{% endblock %}
