@@ -1,0 +1,274 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}How to Use PowerSolution{% endblock %}
+
+{% block content %}
+
+<section class="guide-hero">
+    <div class="guide-container">
+        <span class="guide-eyebrow">USER GUIDE</span>
+        <h1>How to Use PowerSolution</h1>
+        <p>
+            Follow these simple steps to calculate your electricity
+            requirements and estimate the inverter, batteries and
+            solar panels needed for your home or business.
+        </p>
+        <a href="{% url 'home' %}" class="guide-btn">
+            Open Energy Calculator
+        </a>
+    </div>
+</section>
+
+<section class="guide-section">
+    <div class="guide-container">
+
+        <div class="guide-heading">
+            <h2>Calculate Your Power Needs in 6 Easy Steps</h2>
+            <p>
+                You don't need to be an electrical engineer
+                to get started.
+            </p>
+        </div>
+
+        <div class="guide-steps">
+
+            <article class="guide-step">
+                <div class="guide-number">01</div>
+                <div>
+                    <h3>Select Your Appliances</h3>
+                    <p>
+                        Open the calculator and choose the electrical
+                        appliances you use, such as LED lights,
+                        televisions, fans, refrigerators and
+                        air conditioners.
+                    </p>
+                    <p>
+                        Add a separate row for each appliance type.
+                    </p>
+                </div>
+            </article>
+
+            <article class="guide-step">
+                <div class="guide-number">02</div>
+                <div>
+                    <h3>Enter Quantity and Daily Usage</h3>
+                    <p>
+                        Enter the number of appliances, their
+                        power ratings in watts and how many hours
+                        you use them each day.
+                    </p>
+                    <div class="guide-example">
+                        <strong>Example:</strong>
+                        5 LED lights × 10 watts × 6 hours
+                        = 300 Wh (0.3 kWh) per day.
+                    </div>
+                </div>
+            </article>
+
+            <article class="guide-step">
+                <div class="guide-number">03</div>
+                <div>
+                    <h3>Configure Your Power System</h3>
+                    <p>
+                        Choose your preferred battery chemistry,
+                        system voltage and backup duration.
+                    </p>
+                    <p>
+                        The calculator also provides technical
+                        settings such as power factor, inverter
+                        margin, depth of discharge and peak sun hours.
+                        You can retain the suggested defaults if
+                        you are unsure.
+                    </p>
+                </div>
+            </article>
+
+            <article class="guide-step">
+                <div class="guide-number">04</div>
+                <div>
+                    <h3>Click Calculate My System</h3>
+                    <p>
+                        After entering your details, click the
+                        Calculate My System button.
+                    </p>
+                    <p>
+                        PowerSolution estimates your connected load,
+                        daily energy usage, inverter capacity,
+                        battery requirements and solar array size.
+                    </p>
+                </div>
+            </article>
+
+            <article class="guide-step">
+                <div class="guide-number">05</div>
+                <div>
+                    <h3>Review Equipment and Estimated Costs</h3>
+                    <p>
+                        Review the recommended inverter, batteries
+                        and solar panels, including quantities,
+                        specifications and estimated prices.
+                    </p>
+                    <p>
+                        Read any warnings or recommendations
+                        displayed in your calculation results.
+                    </p>
+                </div>
+            </article>
+
+            <article class="guide-step">
+                <div class="guide-number">06</div>
+                <div>
+                    <h3>Generate Your Quotation</h3>
+                    <p>
+                        Enter your name, email address and phone
+                        number in the quotation section.
+                    </p>
+                    <p>
+                        Generate your quotation and download
+                        the PDF for your records or to discuss
+                        with a solar installation professional.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="guide-section guide-light">
+    <div class="guide-container">
+
+        <div class="guide-heading">
+            <h2>Understanding Your Calculation Results</h2>
+            <p>Here is what the main figures mean.</p>
+        </div>
+
+        <div class="guide-results">
+
+            <div class="guide-result">
+                <h3>⚡ Connected Load (W)</h3>
+                <p>
+                    The total power rating of your selected
+                    appliances, assuming they operate together.
+                </p>
+            </div>
+
+            <div class="guide-result">
+                <h3>📊 Daily Energy (kWh)</h3>
+                <p>
+                    The estimated amount of electricity your
+                    appliances consume each day.
+                </p>
+            </div>
+
+            <div class="guide-result">
+                <h3>🔌 Inverter Capacity (kVA)</h3>
+                <p>
+                    The estimated inverter capacity needed
+                    to support your connected electrical load.
+                </p>
+            </div>
+
+            <div class="guide-result">
+                <h3>🔋 Battery Requirements</h3>
+                <p>
+                    The estimated battery storage needed
+                    for your selected backup duration.
+                </p>
+            </div>
+
+            <div class="guide-result">
+                <h3>☀️ Solar Array (W)</h3>
+                <p>
+                    The estimated solar panel capacity based
+                    on your daily energy consumption,
+                    sunlight hours and system losses.
+                </p>
+            </div>
+
+            <div class="guide-result">
+                <h3>💰 Estimated Cost</h3>
+                <p>
+                    The estimated cost of recommended equipment
+                    using prices available in the application.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="guide-section">
+    <div class="guide-container">
+        <div class="guide-heading">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="guide-faq">
+            <details>
+                <summary>Is the PowerSolution calculator free to use?</summary>
+                <p>
+                    You can use the calculator to estimate your
+                    electricity requirements. Any applicable
+                    quotation or payment terms will be shown
+                    in the application.
+                </p>
+            </details>
+
+            <details>
+                <summary>What if I don't know an appliance's wattage?</summary>
+                <p>
+                    Check the rating label or manufacturer
+                    specifications. PowerSolution may provide
+                    a default wattage, which you can adjust
+                    to match your actual appliance.
+                </p>
+            </details>
+
+            <details>
+                <summary>Are the recommended equipment sizes exact?</summary>
+                <p>
+                    No. Results are estimates. A qualified
+                    professional should confirm starting loads,
+                    battery compatibility, installation conditions
+                    and final equipment selection.
+                </p>
+            </details>
+
+            <details>
+                <summary>Can I download my quotation?</summary>
+                <p>
+                    Yes. Once you have successfully generated
+                    a quotation, you can download the PDF
+                    using the quotation feature.
+                </p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<section class="guide-cta">
+    <div class="guide-container">
+        <h2>Ready to Calculate Your Energy Needs?</h2>
+        <p>
+            Get started with your appliances and discover
+            your estimated power system requirements.
+        </p>
+        <a href="{% url 'home' %}" class="guide-btn">
+            Start Calculating
+        </a>
+    </div>
+</section>
+
+<section class="guide-notice">
+    <div class="guide-container">
+        <strong>Important:</strong>
+        Calculations and prices are estimates for planning
+        purposes. Consult a qualified solar installation
+        professional before purchasing or installing equipment.
+    </div>
+</section>
+
+{% endblock %}
