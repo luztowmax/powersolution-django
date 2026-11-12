@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,6 @@
     <title>{% block title %}PowerSolution{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet"
@@ -17,15 +17,32 @@
 
 <body>
 
+    <!-- Navigation Header -->
     <header class="top">
-        <a class="logo" href="/">⚡ POWERSOLUTION</a>
+        <a class="logo" href="{% url 'home' %}">
+            ⚡ POWERSOLUTION
+        </a>
 
-        <nav>
+        <!-- Mobile Hamburger Button -->
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-controls="navLinks"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
             <a href="{% url 'about' %}">About Us</a>
-              <a href="{% url 'how_it_works' %}">How It Works</a>
-            <a href="/">Calculator</a>
+            <a href="{% url 'how_it_works' %}">How It Works</a>
+            <a href="{% url 'home' %}">Calculator</a>
             <a href="/admin/">Admin</a>
-
         </nav>
     </header>
 
@@ -58,7 +75,7 @@
 
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="/">Home</a>
+                <a href="{% url 'home' %}">Home</a>
                 <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
                 <a href="mailto:YOUR_EMAIL@example.com">Contact Us</a>
             </div>
@@ -68,25 +85,29 @@
 
                 <div class="social-links">
                     <a href="https://www.facebook.com/YOUR_PAGE"
-                       target="_blank" rel="noopener noreferrer"
+                       target="_blank"
+                       rel="noopener noreferrer"
                        aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
 
                     <a href="https://www.instagram.com/YOUR_HANDLE"
-                       target="_blank" rel="noopener noreferrer"
+                       target="_blank"
+                       rel="noopener noreferrer"
                        aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
 
                     <a href="https://www.linkedin.com/company/YOUR_COMPANY"
-                       target="_blank" rel="noopener noreferrer"
+                       target="_blank"
+                       rel="noopener noreferrer"
                        aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
 
                     <a href="https://www.tiktok.com/@YOUR_HANDLE"
-                       target="_blank" rel="noopener noreferrer"
+                       target="_blank"
+                       rel="noopener noreferrer"
                        aria-label="TikTok">
                         <i class="fab fa-tiktok"></i>
                     </a>
@@ -109,11 +130,17 @@
     <!-- Floating WhatsApp Chat -->
     <div class="whatsapp-widget">
         <div id="whatsapp-chat" class="whatsapp-chat-box" hidden>
+
             <div class="chat-header">
                 <i class="fab fa-whatsapp"></i>
                 <span>PowerSolution Support</span>
-                <button type="button" id="close-whatsapp"
-                        aria-label="Close chat">&times;</button>
+
+                <button
+                    type="button"
+                    id="close-whatsapp"
+                    aria-label="Close chat">
+                    &times;
+                </button>
             </div>
 
             <div class="chat-body">
@@ -122,6 +149,7 @@
                     Need help choosing an inverter, battery or
                     solar system for your home?
                 </p>
+
                 <a id="start-whatsapp"
                    href="https://wa.me/2349032924589?text=Hello%20HomePower%2C%20I%20need%20assistance"
                    target="_blank"
@@ -131,10 +159,12 @@
             </div>
         </div>
 
-        <button type="button" id="whatsapp-toggle"
-                class="whatsapp-float"
-                aria-label="Chat with HomePower on WhatsApp"
-                aria-expanded="false">
+        <button
+            type="button"
+            id="whatsapp-toggle"
+            class="whatsapp-float"
+            aria-label="Chat with PowerSolution on WhatsApp"
+            aria-expanded="false">
             <i class="fab fa-whatsapp"></i>
         </button>
     </div>
@@ -143,6 +173,58 @@
     {% endblock %}
 
     <script src="{% static 'js/whatsapp.js' %}"></script>
+
+    <!-- Mobile Navigation JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navLinks = document.getElementById("navLinks");
+
+            if (!menuToggle || !navLinks) return;
+
+            function closeMenu() {
+                navLinks.classList.remove("active");
+                menuToggle.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+            }
+
+            menuToggle.addEventListener("click", function () {
+                const isOpen = navLinks.classList.toggle("active");
+
+                menuToggle.classList.toggle("active", isOpen);
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+                menuToggle.setAttribute(
+                    "aria-label",
+                    isOpen
+                        ? "Close navigation menu"
+                        : "Open navigation menu"
+                );
+            });
+
+            navLinks.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", closeMenu);
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", function () {
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -5,7 +5,8 @@
 <section class="hero"><span class="eyebrow">HOME ENERGY ASSESSMENT</span><h1>Plan the right power system for your home.</h1><p>Enter your appliances and usage to estimate inverter capacity, battery storage, solar panels and equipment costs.</p></section>
 <div class="columns">
 <section class="card"><h2>1. Appliances</h2><p class="muted">Select appliances, quantity and daily usage. Edit watts to match the equipment label.</p>
-<div class="table-scroll"><table><thead><tr><th>Appliance</th><th>Qty</th><th>Watts each</th><th>Hours/day</th><th></th></tr></thead><tbody id="rows"></tbody></table></div><button class="btn light" id="add">+ Add appliance</button>
+<div class="table-scroll appliance-table-scroll">
+    <table class="appliance-table"><thead><tr><th>Appliance</th><th>Qty</th><th>Watts each</th><th>Hours/day</th><th></th></tr></thead><tbody id="rows"></tbody></table></div><button class="btn light" id="add">+ Add appliance</button>
 <h2 class="space">2. System settings</h2><div class="formgrid">
 <label>Backup hours<input id="backup" type="number" value="4" min="1" max="24"></label>
 <label>Battery chemistry<select id="chemistry"><option>Lithium</option><option>Tubular</option><option>Gel</option><option>AGM</option></select></label>

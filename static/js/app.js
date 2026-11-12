@@ -2,20 +2,84 @@ function getCookie(name){return document.cookie.split(';').map(x=>x.trim()).find
 const tbody=document.getElementById("rows");
 const applianceData=window.APPLIANCE_CATALOG;
 let lastPayload=null,lastResult=null;
-function addRow(defaultId=null){
- const tr=document.createElement("tr");
- const opts=applianceData.map(a=>`<option value="${a.id}" ${a.id===defaultId?"selected":""}>${a.name}</option>`).join("");
- tr.innerHTML=`<td><select class="appselect">${opts}</select></td><td><input class="qty" type="number" min="0" value="1"></td><td><input class="watts" type="number" min="0" step="1"></td><td><input class="hours" type="number" min="0" max="24" step=".5" value="5"></td><td><button type="button" class="remove">×</button></td>`;
- tbody.appendChild(tr);
- const sel=tr.querySelector(".appselect");
- const update=()=>tr.querySelector(".watts").value=applianceData.find(a=>a.id===Number(sel.value))?.watts||0;
- sel.addEventListener("change",update);update();
- tr.querySelector(".remove").onclick=()=>tr.remove();
+
+function addRow(defaultId = null) {
+    const tr = document.createElement("tr");
+
+    const opts = applianceData.map(a => `
+        <option value="${a.id}"
+            ${a.id === defaultId ? "selected" : ""}>
+            ${a.name}
+        </option>
+    `).join("");
+
+    tr.innerHTML = `
+        <td data-label="Appliance">
+            <select class="appselect" aria-label="Appliance">
+                ${opts}
+            </select>
+        </td>
+
+        <td data-label="Quantity">
+            <input
+                class="qty"
+                type="number"
+                min="0"
+                value="1"
+                aria-label="Quantity"
+            >
+        </td>
+
+        <td data-label="Watts each">
+            <input
+                class="watts"
+                type="number"
+                min="0"
+                step="1"
+                aria-label="Watts each"
+            >
+        </td>
+
+        <td data-label="Hours/day">
+            <input
+                class="hours"
+                type="number"
+                min="0"
+                max="24"
+                step=".5"
+                value="5"
+                aria-label="Hours per day"
+            >
+        </td>
+
+        <td data-label="">
+            <button
+                type="button"
+                class="remove"
+                aria-label="Remove appliance"
+                title="Remove appliance"
+            >
+                &times;
+            </button>
+        </td>
+    `;
+
+    tbody.appendChild(tr);
+
+    const sel = tr.querySelector(".appselect");
+
+    const update = () => {
+        tr.querySelector(".watts").value =
+            applianceData.find(
+                a => a.id === Number(sel.value)
+            )?.watts || 0;
+    };
+
+    sel.addEventListener("change", update);
+    update();
+
+    tr.querySelector(".remove").onclick = () => tr.remove();
 }
-document.getElementById("add").onclick=()=>addRow();
-addRow(applianceData.find(a=>a.name==="LED Light")?.id);
-addRow(applianceData.find(a=>a.name==="Television")?.id);
-addRow(applianceData.find(a=>a.name==="Standing Fan")?.id);
 function payload(){
  return {appliances:[...tbody.querySelectorAll("tr")].map(tr=>({appliance_id:Number(tr.querySelector(".appselect").value),quantity:Number(tr.querySelector(".qty").value),watts:Number(tr.querySelector(".watts").value),hours:Number(tr.querySelector(".hours").value)})),
  backup_hours:Number(document.getElementById("backup").value),system_voltage:Number(document.getElementById("voltage").value),

@@ -547,3 +547,417 @@
     }
 }
 
+/* =====================================
+   POWERSOLUTION MOBILE HAMBURGER MENU
+===================================== */
+
+/* Desktop navigation */
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.top .logo {
+    flex-shrink: 0;
+}
+
+.top .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+/* Hamburger hidden on desktop */
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid #d1e7da;
+    border-radius: 9px;
+    background: #ffffff;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #07563e;
+    border-radius: 3px;
+    transition: transform 0.25s ease,
+                opacity 0.25s ease;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+
+    .top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 14px 16px;
+    }
+
+    .top .logo {
+        font-size: clamp(14px, 4vw, 19px);
+        white-space: nowrap;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
+    .top .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        flex-basis: 100%;
+        width: 100%;
+        gap: 0;
+        padding: 8px 0;
+        margin: 0;
+    }
+
+    .top .nav-links.active {
+        display: flex;
+    }
+
+    .top .nav-links a {
+        display: block;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid #e5eee9;
+    }
+
+    .top .nav-links a:hover,
+    .top .nav-links a:focus-visible {
+        background: #eaf7ef;
+        color: #07563e;
+    }
+
+    /* Hamburger animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Prevent oversized page content */
+    .wrap {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .about-grid,
+    .guide-results,
+    .about-two-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   POWERSOLUTION MOBILE NAVIGATION FIX
+======================================== */
+
+/* Desktop header */
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.top .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    position: static;
+}
+
+/* Mobile header */
+@media screen and (max-width: 768px) {
+
+    .top {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        height: auto;
+        min-height: 68px;
+        padding: 12px 18px;
+        gap: 0;
+        z-index: 1000;
+    }
+
+    .top .logo {
+        font-size: 18px;
+        line-height: 1.3;
+        white-space: nowrap;
+    }
+
+    /* Hamburger button */
+    .top .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        margin-left: auto;
+        flex-shrink: 0;
+        gap: 5px;
+        background: #ffffff;
+        border: 1px solid #cce4d7;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .top .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 3px;
+        background: #07563e;
+        border-radius: 3px;
+    }
+
+    /* Hide navigation completely until opened */
+    .top .nav-links {
+        display: none;
+        position: static;
+        flex-basis: 100%;
+        width: 100%;
+        height: auto;
+        margin: 12px 0 0;
+        padding: 8px 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #ffffff;
+        box-shadow: none;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        overflow: visible;
+    }
+
+    /* Show navigation when hamburger is clicked */
+    .top .nav-links.active {
+        display: flex;
+    }
+
+    /* Navigation links */
+    .top .nav-links a {
+        display: block;
+        position: static;
+        width: 100%;
+        padding: 14px 16px;
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.5;
+        font-weight: 600;
+        color: #07563e;
+        text-decoration: none;
+        border-bottom: 1px solid #edf2ef;
+        background: transparent;
+    }
+
+    .top .nav-links a:hover {
+        background: #eaf7ef;
+    }
+
+    /* Keep main page below navigation */
+    main.wrap {
+        position: relative;
+        z-index: 1;
+        clear: both;
+    }
+
+    /* Prevent horizontal page overflow */
+    body {
+        overflow-x: hidden;
+    }
+}
+
+/* ==========================================
+   POWERSOLUTION RESPONSIVE APPLIANCE TABLE
+========================================== */
+
+/* Desktop: preserve the existing table */
+@media screen and (min-width: 769px) {
+    .table-scroll {
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+/* Mobile: appliance rows become cards */
+@media screen and (max-width: 768px) {
+
+    /* Keep the calculator inside the viewport */
+    .columns,
+    .columns > *,
+    .card {
+        min-width: 0;
+    }
+
+    .card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    /* Remove horizontal scrolling for appliance table */
+    .appliance-table-scroll {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .appliance-table {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        border-collapse: separate;
+    }
+
+    .appliance-table thead {
+        display: none;
+    }
+
+    .appliance-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    /* Each appliance becomes a separate card */
+    .appliance-table tbody tr {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+        padding: 16px;
+        margin-bottom: 14px;
+        background: #f8fafc;
+        border: 1px solid #dce5ed;
+        border-radius: 12px;
+    }
+
+    .appliance-table tbody td {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 0;
+        padding: 0;
+        border: none;
+        font-size: 13px;
+    }
+
+    /* Appliance dropdown spans full width */
+    .appliance-table tbody td:first-child {
+        grid-column: 1 / -1;
+    }
+
+    /* Automatically show input labels */
+    .appliance-table tbody td::before {
+        content: attr(data-label);
+        display: block;
+        color: #52677b;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    /* Inputs and dropdowns */
+    .appliance-table tbody td input,
+    .appliance-table tbody td select {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        height: 44px;
+        padding: 10px;
+        background: #ffffff;
+        color: #203040;
+        border: 1px solid #d4dee8;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    .appliance-table tbody td input:focus,
+    .appliance-table tbody td select:focus {
+        outline: 2px solid #1769aa;
+        outline-offset: 1px;
+    }
+
+    /* Remove appliance button */
+    .appliance-table tbody td:last-child {
+        grid-column: 1 / -1;
+        align-items: flex-end;
+    }
+
+    .appliance-table tbody td:last-child::before {
+        display: none;
+    }
+
+    .appliance-table .remove {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 8px 14px;
+        background: #fff1f2;
+        color: #b42318;
+        border: 1px solid #fecdd3;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    /* Comfortable spacing */
+    .card h2 {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .card p {
+        line-height: 1.6;
+    }
+}
+
+/* Very small phones */
+@media screen and (max-width: 360px) {
+    .appliance-table tbody tr {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+}
+
+
