@@ -80,6 +80,39 @@ function addRow(defaultId = null) {
 
     tr.querySelector(".remove").onclick = () => tr.remove();
 }
+
+/* =====================================
+   INITIALIZE APPLIANCE CALCULATOR
+===================================== */
+
+// Connect the Add Appliance button
+const addApplianceButton = document.getElementById("add");
+
+if (addApplianceButton) {
+    addApplianceButton.addEventListener("click", function () {
+        addRow();
+    });
+}
+
+// Load default appliances when the page opens
+if (Array.isArray(applianceData) && applianceData.length > 0) {
+
+    addRow(
+        applianceData.find(a => a.name === "LED Light")?.id
+    );
+
+    addRow(
+        applianceData.find(a => a.name === "Television")?.id
+    );
+
+    addRow(
+        applianceData.find(a => a.name === "Standing Fan")?.id
+    );
+
+} else {
+    console.warn("PowerSolution appliance catalogue is empty.");
+}
+
 function payload(){
  return {appliances:[...tbody.querySelectorAll("tr")].map(tr=>({appliance_id:Number(tr.querySelector(".appselect").value),quantity:Number(tr.querySelector(".qty").value),watts:Number(tr.querySelector(".watts").value),hours:Number(tr.querySelector(".hours").value)})),
  backup_hours:Number(document.getElementById("backup").value),system_voltage:Number(document.getElementById("voltage").value),
