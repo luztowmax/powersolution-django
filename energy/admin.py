@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Appliance,Product,Customer,Quote,QuoteItem
+from .models import Appliance,Product,Customer,Quote,QuoteItem,Payment
 @admin.register(Appliance)
 class ApplianceAdmin(admin.ModelAdmin):
  list_display=('name','category','watts','active')
@@ -34,3 +34,39 @@ class QuoteItemAdmin(admin.ModelAdmin):
  list_display=('quote','product_name','quantity','unit_price','line_total')
  readonly_fields=('quote','product_name','category','quantity','unit','unit_price','line_total')
  def has_add_permission(self,request): return False
+
+from django.contrib import admin
+
+@admin.register(Payment)
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = (
+        "reference",
+        "quote",
+        "amount",
+        "status",
+        "created_at",
+        "paid_at",
+    )
+
+    list_filter = (
+        "status",
+        "created_at",
+    )
+
+    search_fields = (
+        "reference",
+        "quote__customer__name",
+        "quote__customer__email",
+    )
+
+    readonly_fields = (
+        "quote",
+        "reference",
+        "amount",
+        "status",
+        "created_at",
+        "paid_at",
+    )
+
+    ordering = ("-created_at",)
+
