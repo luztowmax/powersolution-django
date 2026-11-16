@@ -17,6 +17,7 @@ urlpatterns=[
     payments.initialize_payment,
     name="initialize_payment"
 ),
+path("contact/", views.contact, name="contact"),
 path(
     "payment/callback/",
     payments.payment_callback,

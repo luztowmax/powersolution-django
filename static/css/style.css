@@ -960,4 +960,214 @@
     }
 }
 
+/* PowerSolution Contact Page */
+
+.contact-item {
+    margin: 22px 0;
+    padding: 18px 20px;
+    background: #f5f9fc;
+    border-left: 4px solid #16845b;
+    border-radius: 10px;
+}
+
+.contact-item h3 {
+    color: #153b5b;
+    margin: 0 0 8px;
+    font-size: 17px;
+}
+
+.contact-item p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.contact-item a {
+    color: #16845b;
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   POWERSOLUTION PRIVACY POLICY
+===================================== */
+
+.privacy-page {
+    max-width: 1150px;
+    margin: 35px auto 70px;
+    padding: 0 16px;
+}
+
+/* Hero */
+.privacy-hero {
+    background: linear-gradient(
+        135deg,
+        #153b5b 0%,
+        #0e6d68 100%
+    );
+    color: white;
+    text-align: center;
+    padding: 55px 25px;
+    border-radius: 22px;
+    margin-bottom: 30px;
+}
+
+.privacy-hero-icon {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.privacy-hero h1 {
+    color: #ffffff;
+    font-size: clamp(30px, 4vw, 44px);
+    margin: 12px 0;
+}
+
+.privacy-hero p {
+    color: #e5f4f1;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.privacy-date {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 9px 20px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+/* Introduction */
+.privacy-intro {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    border: 1px solid #e5edf3;
+    box-shadow: 0 6px 22px rgba(21,59,91,0.05);
+}
+
+.privacy-intro h2 {
+    color: #153b5b;
+    margin-bottom: 12px;
+}
+
+.privacy-intro p {
+    color: #526477;
+    line-height: 1.8;
+}
+
+/* Card grid */
+.privacy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.privacy-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid #e5edf3;
+    box-shadow: 0 8px 25px rgba(21,59,91,0.07);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.privacy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(21,59,91,0.13);
+}
+
+.privacy-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e6f7ef;
+    border-radius: 14px;
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+.privacy-card h2 {
+    color: #153b5b;
+    font-size: 21px;
+    margin: 0 0 15px;
+}
+
+.privacy-card p {
+    color: #526477;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.privacy-card strong {
+    color: #153b5b;
+}
+
+.privacy-card a {
+    color: #16845b;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.privacy-card a:hover {
+    text-decoration: underline;
+}
+
+/* Contact section */
+.privacy-contact {
+    text-align: center;
+    margin-top: 35px;
+    padding: 40px 25px;
+    background: #edf7f3;
+    border-radius: 18px;
+}
+
+.privacy-contact h2 {
+    color: #153b5b;
+    margin-bottom: 12px;
+}
+
+.privacy-contact p {
+    color: #526477;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .privacy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .privacy-page {
+        padding: 0 10px;
+    }
+
+    .privacy-hero {
+        padding: 38px 20px;
+    }
+
+    .privacy-intro,
+    .privacy-card {
+        padding: 22px;
+    }
+
+    .privacy-contact {
+        padding: 30px 20px;
+    }
+}
+
 

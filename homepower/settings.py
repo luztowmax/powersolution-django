@@ -34,6 +34,30 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
+
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        "DJANGO_CSRF_TRUSTED_ORIGINS",
+        ""
+    ).split(",")
+    if origin.strip()
+]
+
+# Render HTTPS configuration
+SECURE_PROXY_SSL_HEADER = (
+    "HTTP_X_FORWARDED_PROTO",
+    "https"
+)
+
+# Secure cookies in production
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+
+# Redirect HTTP to HTTPS in production
+SECURE_SSL_REDIRECT = not DEBUG
+
+
 # Installed applications
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -78,14 +102,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "homepower.wsgi.application"
 
-# Database
+
+# Database configuration
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not DEBUG and not DATABASE_URL:
+    raise ImproperlyConfigured(
+        "DATABASE_URL must be configured in production."
+    )
+
 DATABASES = {
     "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=0,
+        default=(
+            DATABASE_URL
+            or f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
+        ),
+        conn_max_age=600 if DATABASE_URL else 0,
         conn_health_checks=True,
     )
 }
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -130,9 +166,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = "/admin/login/"
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-LOGIN_URL = "/admin/login/"
 
 # Paystack configuration
 PAYSTACK_SECRET_KEY = os.getenv("PAYSTACK_SECRET_KEY", "")

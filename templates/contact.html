@@ -1,0 +1,84 @@
+
+{% extends "base.html" %}
+
+{% block title %}Contact Us | PowerSolution{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <span class="eyebrow">CONTACT POWERSOLUTION</span>
+    <h1>Get in touch with us</h1>
+    <p>
+        Have questions about solar energy, inverter sizing,
+        battery storage or your PowerSolution quotation?
+        We're here to help.
+    </p>
+</section>
+
+<div class="columns">
+
+    <section class="card">
+        <h2>Contact Information</h2>
+        <p class="muted">
+            Reach us through any of the channels below.
+        </p>
+
+        <div class="contact-item">
+            <h3>Telephone</h3>
+            <p>
+                <a href="tel:+2349032924589">
+                    +234 903 292 4589
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-item">
+            <h3>Email Address</h3>
+            <p>
+                <a href="mailto:info@powersolution.com.ng">
+                    info@powersolution.com.ng
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-item">
+            <h3>Office Address</h3>
+            <p>
+                22, Bornu Crescent,<br>
+                Apapa, Lagos, Nigeria.
+            </p>
+        </div>
+
+        <a
+            class="btn primary"
+            href="mailto:info@powersolution.com.ng"
+        >
+            Send us an Email
+        </a>
+    </section>
+
+    <aside class="card help">
+        <h3>Need help planning your solar system?</h3>
+
+        <p>
+            Use the PowerSolution calculator to estimate
+            your electricity requirements and explore
+            suitable solar equipment.
+        </p>
+
+        <ul>
+            <li>Home energy assessment</li>
+            <li>Inverter capacity estimates</li>
+            <li>Battery storage estimates</li>
+            <li>Solar panel recommendations</li>
+            <li>Equipment quotations</li>
+        </ul>
+
+        <a class="btn light" href="{% url 'home' %}">
+            Try Our Calculator
+        </a>
+    </aside>
+
+</div>
+
+{% endblock %}
