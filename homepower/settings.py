@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "energy",
+    "django.contrib.sitemaps",
 ]
 
 # Middleware

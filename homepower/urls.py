@@ -1,7 +1,10 @@
+from django.contrib.sitemaps.views import sitemap
+from energy.sitemaps import StaticViewSitemap
 from django.contrib import admin
 from django.urls import path
 from energy import views
 from energy import payments
+
 urlpatterns=[
  path('admin/',admin.site.urls),
  path('',views.home,name='home'),
@@ -16,6 +19,12 @@ urlpatterns=[
     "quote/<int:quote_id>/pay/",
     payments.initialize_payment,
     name="initialize_payment"
+),
+path(
+    "sitemap.xml",
+    sitemap,
+    {"sitemaps": {"static": StaticViewSitemap}},
+    name="sitemap",
 ),
 path("contact/", views.contact, name="contact"),
 path(
