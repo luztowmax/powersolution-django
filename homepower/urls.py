@@ -2,11 +2,15 @@ from django.contrib.sitemaps.views import sitemap
 from energy.sitemaps import StaticViewSitemap
 from django.contrib import admin
 from django.urls import path
+# PowerSolution Admin Branding
+admin.site.site_header = "PowerSolution Administration"
+admin.site.site_title = "PowerSolution Admin Portal"
+admin.site.index_title = "Welcome to PowerSolution Management"
 from energy import views
 from energy import payments
 
 urlpatterns=[
- path('admin/',admin.site.urls),
+ path("powersolution-management/", admin.site.urls),
  path('',views.home,name='home'),
  path("about/", views.about, name="about"),
  path("how-it-works/", views.how_it_works, name="how_it_works"),
